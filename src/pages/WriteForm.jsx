@@ -73,7 +73,7 @@ const WriteForm = () => {
 
             if (response.data === 1) {
                 //리다이렉트
-                navigate("/list");
+                navigate("/list2");
             } else {
                 alert("등록실패");
             }
@@ -124,7 +124,7 @@ const WriteForm = () => {
 
 
             <br /><br />
-            <Link to="/list" rel="noreferrer noopener">리스트로 가기</Link>
+            <Link to="/list2" rel="noreferrer noopener">리스트로 가기</Link>
         </>
            
 

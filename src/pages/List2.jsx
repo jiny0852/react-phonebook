@@ -11,7 +11,7 @@ import axios from 'axios';
 //import css
 
 
-const List = () => {
+const List2 = () => {
 
     /*---상태관리 변수들(값이 변화면 화면 랜더링) ----------*/
     const [personList, setPersonList] = useState([]);
@@ -33,6 +33,8 @@ const List = () => {
             console.log(response.data); //수신데이타
             
             setPersonList(response.data);
+
+            
 
         }).catch(error => {
             console.log(error);
@@ -81,11 +83,18 @@ const List = () => {
 
 
             if ( response.data.result === 'success' ) {
-                                /*
+                /*
                 //리다이렉트 (같은 페이지의 리다이렉트는 안된다)
-                navigate("/list"); //자기페이지에서는 새로고침이 안된다
+                navigate("/list2"); //자기페이지에서는 새로고침이 안된다
                 */
-                getPersonList();
+                //getPersonList();
+
+                //우리가 가지고 있는 리스트(배열) 에서 방금 삭제한 값만 제거된 새로운 배열
+                let newArray = personList.filter( (person)=>(person.personId !== no) );
+                
+                setPersonList( newArray );
+
+
 
             } else {
                 alert(response.data.message);
@@ -133,7 +142,7 @@ const List = () => {
                                 <td>{personVo.company}</td>
                             </tr>
                             <tr>
-                                <td><Link to={'/editform/'+personVo.personId} rel="noreferrer noopener">[수정폼으로 이동]</Link></td>
+                                <td><Link to={`/editform/${personVo.personId}`} rel="noreferrer noopener">[수정폼으로 이동]</Link></td>
                                 <td><button type="button" onClick={ ()=>{ handleDel(personVo.personId) } }>[삭제]</button></td>
                             </tr>
         
@@ -157,4 +166,4 @@ const List = () => {
 
 }
 
-export default List;
+export default List2;
