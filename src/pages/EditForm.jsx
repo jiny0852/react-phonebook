@@ -87,7 +87,7 @@ const EditForm = () => {
 
             if (response.data.result === 'success') {
                 //리다이렉트
-                navigate("/list2");
+                navigate("/list3");
             } else {
                 alert(response.data.message);
             }
@@ -139,7 +139,7 @@ const EditForm = () => {
 
             } else {
                 //실패 시 로직, 리다이엑트로 보내기
-                navigate("/list2");
+                navigate("/list3");
 
             }
 
@@ -189,7 +189,7 @@ const EditForm = () => {
             </form>
 
             <br /><br />
-            <Link to="/list2" rel="noreferrer noopener">리스트로 가기</Link>
+            <Link to="/list3" rel="noreferrer noopener">리스트로 가기</Link>
         </>
            
 
